@@ -1,9 +1,11 @@
 
-# Parçacık Uzayı (Particle Sandbox)
+# Parçacık Uzayı
 
 HTML5 Canvas (2D) üzerinde çalışan, harici kütüphane bağımlılığı bulunmayan interaktif bir fizik ve parçacık simülasyonu.
 
 Fare imleci bir çekim merkezi görevi görür; parçacıklar imlece doğru çekilir veya itilir. Hıza bağlı dinamik renklendirme, sürtünme fiziği ve şok dalgası mekaniklerini içerir.
+
+![Demo](assets/parcacik-acilis.gif)
 
 ## Hızlı Başlangıç
 
@@ -28,7 +30,7 @@ Uygulama varsayılan olarak `http://localhost:5173` adresinde çalışır. İlgi
 | **`Boşluk` (Space)** | Simülasyonu duraklat / Devam ettir |
 | **`M` / `R` / `T`** | Sesi Aç-Kapat / Sıfırla / İzleri Aç-Kapat |
 
-*Arayüz (HUD):* Ekranın sol üst köşesindeki kontrol panelinden parçacık sayısı, kütleçekim kuvveti, sürtünme katsayısı ve iz solma hızı gibi parametreler gerçek zamanlı olarak ayarlanabilmektedir.
+*Arayüz :* Ekranın sol üst köşesindeki kontrol panelinden parçacık sayısı, kütleçekim kuvveti, sürtünme katsayısı ve iz solma hızı gibi parametreler gerçek zamanlı olarak ayarlanabilmektedir.
 
 ## Mimari ve Optimizasyon
 
