@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parçacık Uzayı — İnteraktif Fizik Simülasyonu</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="stage"></canvas>
+
+  <div id="hud">
+    <div class="hud-header">
+      <span class="hud-index">01</span>
+      <h1 class="hud-title">Parçacık Uzayı</h1>
+    </div>
+    <p class="hud-subtitle">İnteraktif Fizik Simülasyonu</p>
+
+    <div class="hud-mode" id="hud-mode" data-mode="attract">
+      <span class="hud-mode-mark"></span>
+      <span class="hud-mode-text" id="mode-badge">Çek</span>
+      <span class="hud-mode-index" id="mode-index">1 / 3</span>
+    </div>
+
+    <div class="hud-stats">
+      <div class="stat">
+        <span class="stat-label">FPS</span>
+        <span class="stat-value" id="stat-fps">--</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Parçacık</span>
+        <span class="stat-value" id="stat-count">0</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Hız</span>
+        <span class="stat-value" id="stat-speed">0</span>
+      </div>
+    </div>
+
+    <div class="hud-controls">
+      <label class="control">
+        <span class="control-head">
+          <span class="control-label">Parçacık</span>
+          <span class="control-value" id="val-count">2400</span>
+        </span>
+        <input type="range" id="ctl-count" min="500" max="4000" step="100" value="2400"
+               aria-label="Parçacık sayısı">
+      </label>
+
+      <label class="control">
+        <span class="control-head">
+          <span class="control-label">Yerçekimi</span>
+          <span class="control-value" id="val-gravity">4.5M</span>
+        </span>
+        <input type="range" id="ctl-gravity" min="0" max="12000000" step="50000" value="4500000"
+               aria-label="Yerçekimi şiddeti">
+      </label>
+
+      <label class="control">
+        <span class="control-head">
+          <span class="control-label">Hız boostu</span>
+          <span class="control-value" id="val-boost">3.5×</span>
+        </span>
+        <input type="range" id="ctl-boost" min="1" max="6" step="0.1" value="3.5"
+               aria-label="Hızlı fare hareketinde yerçekimi güç çarpanı">
+      </label>
+
+      <label class="control">
+        <span class="control-head">
+          <span class="control-label">Sürtünme</span>
+          <span class="control-value" id="val-friction">0.9990</span>
+        </span>
+        <input type="range" id="ctl-friction" min="0.99" max="0.9999" step="0.0001" value="0.999"
+               aria-label="Sürtünme katsayısı">
+      </label>
+
+      <label class="control">
+        <span class="control-head">
+          <span class="control-label">Taban hız</span>
+          <span class="control-value" id="val-floor">40</span>
+        </span>
+        <input type="range" id="ctl-floor" min="0" max="80" step="2" value="40"
+               aria-label="Canlılık taban hızı">
+      </label>
+
+      <label class="control">
+        <span class="control-head">
+          <span class="control-label">İz</span>
+          <span class="control-value" id="val-trail">0.18</span>
+        </span>
+        <input type="range" id="ctl-trail" min="0" max="0.6" step="0.02" value="0.18"
+               aria-label="İz solma miktarı">
+      </label>
+
+      <div class="toggles">
+        <button id="btn-trails" class="toggle" aria-pressed="true">İzler</button>
+        <button id="btn-audio" class="toggle" aria-pressed="false">Ses</button>
+        <button id="btn-reset" class="toggle">Sıfırla</button>
+      </div>
+    </div>
+
+    <div class="hud-help">
+      <dl>
+        <dt>1 / 2 / 3</dt><dd>Çek · İt · Karışık</dd>
+        <dt>Sağ tık</dt><dd>Mod değiştir</dd>
+        <dt>Tıkla</dt><dd>Şok dalgası</dd>
+        <dt>Boşluk</dt><dd>Duraklat</dd>
+        <dt>M</dt><dd>Ses</dd>
+        <dt>R</dt><dd>Sıfırla</dd>
+        <dt>T</dt><dd>İzler</dd>
+      </dl>
+    </div>
+  </div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

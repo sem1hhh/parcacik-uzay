@@ -1,0 +1,14 @@
+{
+  "name": "parcacik-uzay",
+  "version": "1.0.0",
+  "description": "İnteraktif parçacık / fizik simülasyonu (yerçekimi, sürtünme, çarpışma)",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "node --test tests/",
+    "test:watch": "node --test --watch tests/"
+  },
+  "keywords": ["canvas", "particles", "physics", "simulation", "gravity"],
+  "license": "UNLICENSED"
+}
